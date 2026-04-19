@@ -218,7 +218,7 @@ hackathon-main/
 git clone <repo-url>
 cd hackathon-main
 
-pip install pandas numpy matplotlib plotly jupyter
+pip install pandas numpy matplotlib plotly jupyter polaris
 
 jupyter notebook
 ```
