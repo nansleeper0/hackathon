@@ -148,7 +148,8 @@
 
 * pandas
 * numpy
-* plotly (Sankey)
+* plotly 
+* Polaris
 * гео-аналитика (map-based analysis)
 * jupyter notebook
 
@@ -159,16 +160,7 @@
 Результаты из папки используются для:
 
 * построения дашбордов
-* feature engineering (для churn модели)
+* feature engineering
 * анализа эффективности каналов
 * географической оптимизации бизнеса
 
----
-
-## 🔑 Ключевая идея
-
-Этот модуль отвечает за **агрегацию и интерпретацию сырого event-лога**:
-
-```text
-events → user journeys → агрегаты → бизнес-метрики
-```
