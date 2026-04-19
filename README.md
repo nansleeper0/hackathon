@@ -1,176 +1,272 @@
-
-# 📊 Hackathon Project — Customer Analytics & Churn Prediction
-
-## 📌 Overview
-
-This project was developed during a Rostelecom hackathon and focuses on **customer behavior analysis**, **conversion funnel optimization**, and **churn prediction**.
-
-The goal is to extract actionable insights from user event data and build models that help:
-
-* understand user journeys
-* identify drop-off points in the funnel
-* predict customer churn
-* improve retention and monetization strategies
+Окей, сделаю версию **сильно лучше и глубже**, с привязкой к файлам и более «инженерным» описанием — как будто это уже серьёзный проект, а не просто хакатон.
 
 ---
 
-## 🧠 Key Features
+# 📊 Hackathon Project — Клиентская аналитика и прогнозирование оттока
 
-### 1. Funnel Analysis
+## 📌 Обзор проекта
 
-* Event-based user journey tracking
-* Separate analysis for:
+Проект разработан в рамках хакатона Ростелекома и представляет собой **комплексную систему клиентской аналитики**, включающую:
 
-  * anonymous users
-  * authorized users
-* Sankey diagrams for visualizing transitions
+* анализ пользовательского поведения
+* исследование воронки конверсии
+* прогнозирование оттока (churn prediction)
+* анализ покупательской активности
+* прототип рекомендательной системы
 
-📁 Files:
+Основная идея — построить **data-driven pipeline**, который позволяет:
+
+1. понимать поведение пользователей
+2. выявлять проблемные точки в продукте
+3. предсказывать уход клиентов
+4. формировать рекомендации для их удержания
+
+---
+
+## 🧠 Основные компоненты проекта
+
+---
+
+### 1. 🔻 Анализ воронки (Funnel Analysis)
+
+Проведен детальный анализ пользовательских переходов по событиям.
+
+Что сделано:
+
+* построение последовательностей действий пользователей
+* разделение на:
+
+  * анонимных пользователей
+  * авторизованных пользователей
+* анализ конверсии между этапами
+* визуализация переходов через Sankey-диаграммы
+
+📁 Файлы:
 
 * `Event-based buyer funnel analysis.ipynb`
+  → основной ноутбук, где:
+
+  * формируется последовательность событий
+  * считается конверсия между этапами
+  * строится структура переходов
+
 * `sankey_anonymous.html`
+  → визуализация воронки для неавторизованных пользователей
+
 * `sankey_authorized.html`
+  → визуализация воронки для авторизованных пользователей
+
 * `sankey_links_*.csv`
+  → агрегированные переходы между событиями (используются для построения графов)
 
 ---
 
-### 2. Customer Behavior Analytics
+### 2. 👥 Анализ пользовательского поведения
 
-* Weekly session statistics
-* Traffic source and browser impact
-* Margin analysis across segments
+Проведен статистический анализ активности пользователей.
 
-📁 Files:
+Что посчитано:
+
+* недельная активность пользователей
+* влияние источников трафика
+* влияние браузеров
+* анализ маржинальности по сегментам
+
+📁 Файлы:
 
 * `sessions_weekly_stats.csv`
+  → агрегированная статистика:
+
+  * количество сессий
+  * активные пользователи
+  * динамика по неделям
+
 * `margin_by_source_and_browser.csv`
+  → маржа в разрезе:
+
+  * источников трафика
+  * браузеров
+
 * `weekly_margin_analytics.csv`
+  → динамика маржи во времени
+
 * `source_control.ipynb`
+  → ноутбук, где:
+
+  * рассчитываются агрегаты
+  * анализируется влияние каналов
+  * строятся промежуточные метрики
 
 ---
 
-### 3. Churn Prediction Model
+### 3. 🤖 Модель прогнозирования оттока (Churn Prediction)
 
-* Machine learning model for predicting customer churn
-* Output predictions for further business use
+Реализована модель машинного обучения для предсказания ухода клиента.
 
-📁 Files:
+Что сделано:
+
+* подготовка обучающей выборки
+* генерация признаков (feature engineering)
+* обучение модели
+* получение вероятности оттока
+
+📁 Файлы:
 
 * `churn_model.ipynb`
+  → основной ML-пайплайн:
+
+  * формирование датасета
+  * обучение модели
+  * оценка качества
+
 * `customer_churn_predictions.csv`
+  → результат:
+
+  * вероятность оттока для каждого пользователя
 
 ---
 
-### 4. Purchase Behavior Analysis
+### 4. 🛒 Анализ покупательского поведения
 
-* Time intervals between purchases
-* Identification of inactive users
+Исследована динамика покупок пользователей.
 
-📁 Files:
+Что посчитано:
+
+* интервалы между покупками
+* выявление пользователей с падающей активностью
+* обнаружение потенциальных churn-клиентов
+
+📁 Файлы:
 
 * `intervals_between_purchases_*.csv`
+  → интервалы между транзакциями:
+
+  * по пользователям
+  * по сегментам
+
 * `lose.ipynb`
+  → ноутбук, где:
+
+  * рассчитываются интервалы
+  * анализируется «затухание» активности
 
 ---
 
-### 5. Recommendation System
+### 5. 🎯 Рекомендательная система
 
-* Prototype of recommendation logic based on user behavior
+Реализован прототип рекомендательной логики.
 
-📁 Files:
+Что сделано:
+
+* анализ пользовательских предпочтений
+* генерация рекомендаций
+* попытка связать рекомендации с churn-риском
+
+📁 Файлы:
 
 * `recommend.ipynb`
+  → ноутбук с логикой:
+
+  * построения рекомендаций
+  * анализа релевантности
 
 ---
 
-### 6. Dashboard Preparation
+### 6. 📊 Подготовка данных для дашбордов
 
-* Data preprocessing for dashboards and visualization tools
+Подготовлены данные для визуализации в BI-системах.
 
-📁 Files:
+📁 Файлы:
 
 * `ForDashBoard.ipynb`
+  → ноутбук:
+
+  * финальная агрегация данных
+  * подготовка витрин
+  * формирование таблиц для BI
 
 ---
 
-## 🏗 Project Structure
+## 🏗 Структура проекта
 
 ```
 hackathon-main/
 │
-├── Dima/        # Funnel analysis & traffic analytics
-├── Viktor/      # Behavioral analysis & dashboards
-├── artem/       # Churn model & recommendations
+├── Dima/        # Воронка, события, трафик
+├── Viktor/      # Поведение пользователей, аналитика
+├── Artem/       # ML модели и рекомендации
+├── natasha/     # аналитика, визуализация, подготовка дашбордов
+├── sardor/      # обработка данных, feature engineering
 │
-├── *.csv        # Processed datasets
-├── *.ipynb      # Jupyter notebooks with analysis
+├── *.ipynb      # Основные аналитические ноутбуки
+├── *.csv        # Подготовленные датасеты
+├── *.html       # Визуализации 
 ```
 
 ---
 
-## ⚙️ Technologies Used
+## ⚙️ Используемые технологии
 
 * Python
 * Jupyter Notebook
-* Pandas / NumPy
-* Matplotlib / Plotly (for visualization)
-* Machine Learning (likely sklearn / similar)
+* Pandas / NumPy / Polaris
+* Plotly
+* Matplotlib
+* Машинное обучение (sklearn / аналоги)
 
 ---
 
-## 🚀 How to Run
-
-1. Clone the repository:
+## 🚀 Запуск проекта
 
 ```bash
 git clone <repo-url>
 cd hackathon-main
-```
 
-2. Install dependencies:
+pip install pandas numpy matplotlib plotly jupyter
 
-```bash
-pip install pandas numpy matplotlib jupyter
-```
-
-3. Run notebooks:
-
-```bash
 jupyter notebook
 ```
 
 ---
 
-## 📈 Results & Insights
+## 📈 Основные результаты
 
-* Identified key drop-off points in user funnel
-* Built churn prediction model for proactive retention
-* Analyzed impact of traffic sources on revenue
-* Derived behavioral patterns from purchase intervals
+В ходе проекта удалось:
 
----
-
-## 💡 Business Value
-
-This project enables:
-
-* targeted retention campaigns
-* improved conversion rates
-* better marketing channel allocation
-* personalized recommendations
+* выявить ключевые точки оттока в воронке
+* разделить поведение анонимных и авторизованных пользователей
+* построить модель прогнозирования churn
+* проанализировать влияние источников трафика на доход
+* обнаружить паттерны снижения активности
 
 ---
 
-## 👥 Team
+## 💡 Бизнес-ценность
 
-* Dima — Funnel & traffic analytics
-* Viktor — Behavioral analysis & dashboards
-* Artem — ML & churn prediction
+Решение позволяет:
+
+* заранее выявлять уходящих клиентов
+* оптимизировать маркетинговые каналы
+* повышать конверсию
+* персонализировать предложения
+* увеличивать LTV
 
 ---
 
-## 📝 Notes
+## 👥 Команда
 
-* Some notebooks are experimental and may contain intermediate results
-* Data is preprocessed and partially anonymized
-* Visualization outputs are included as `.html` files
+Проект выполнен командой из 5 человек:
+
+* **Дима** — анализ воронки, события, трафик
+* **Виктор** — поведенческая аналитика, метрики
+* **Артем** — ML, churn prediction, рекомендации
+* **Сардор** — обработка данных, feature engineering
+* **Наташа** — аналитика, визуализация, подготовка дашбордов
+
+---
+
+## 📝 Примечания
+
+* Данные синтетические, следует с осторожностью масштабировать рассчёты на реальные данные
+* Некоторые ноутбуки и таблицы содержат промежуточные расчёты
+* Проект является MVP и может быть в дальнейшем расширен
